@@ -1,0 +1,542 @@
+﻿@model RIFA.ViewModels.RegistroPuntosViewModel // El modelo sigue siendo el ViewModel de registro
+
+@{
+    ViewData["Title"] = "RIFA | Registro de Puntos"; // Título ajustado para claridad
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RIFA | Proyecto de Reciclaje</title>
+    @* Si tienes CSS específicos para esta vista, agrégalos aquí *@
+    <link href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/tooplate-kool-form-pack.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Using the font from the previous style */
+            color: #fff; /* Default text color from previous style */
+            overflow: hidden; /* To contain the video background */
+        }
+
+        main {
+            position: relative;
+            z-index: 1; /* To place content above the video */
+        }
+
+        .site-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+            .site-header .container {
+                display: flex;
+                justify-content: center; /* Center the content */
+                align-items: center;
+            }
+
+            .site-header .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%; /* Make row take full width of container */
+            }
+
+        .site-header-text {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.5rem;
+            margin-right: auto; /* Push logo to the left */
+        }
+
+            .site-header-text i {
+                margin-right: 8px;
+                font-size: 1.8rem;
+            }
+
+        .social-icon {
+            display: flex;
+            gap: 12px; /* Adjusted gap */
+        }
+
+        .social-icon-link {
+            font-size: 22px;
+            transition: color 0.3s ease;
+            color: #fff; /* Default color white */
+            text-decoration: none;
+        }
+
+            /* Specific social media colors */
+            .social-icon-link.instagram {
+                color: #fff;
+            }
+
+            .social-icon-link.facebook {
+                color: #fff;
+            }
+
+            /* Hover effects */
+            .social-icon-link.instagram:hover {
+                color: #fff;
+            }
+
+            .social-icon-link.facebook:hover {
+                color: #fff;
+            }
+
+        .custom-btn {
+            background-color: transparent;
+            border: 2px solid #fff; /* Using white border like the previous style */
+            color: #fff; /* Using white color like the previous style */
+            padding: 8px 18px;
+            border-radius: 25px; /* Rounded like the previous style */
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+            .custom-btn:hover {
+                background-color: #fff;
+                color: #181818; /* Dark text on hover like previous style */
+            }
+
+        .offcanvas-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px; /* Add space before the offcanvas icon */
+        }
+
+        .offcanvas {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .offcanvas-body nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+            .offcanvas-body nav ul li {
+                margin-bottom: 15px;
+            }
+
+                .offcanvas-body nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+
+                    .offcanvas-body nav ul li a.active,
+                    .offcanvas-body nav ul li a:hover {
+                        opacity: 1;
+                    }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+            position: relative; /* To position content above the video */
+            z-index: 1; /* Ensure content is above the video */
+            background: transparent; /* Make the section background transparent */
+        }
+
+        .project-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-family: 'Unbounded', sans-serif; /* Using the title font */
+        }
+
+        .info-section {
+            background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: left; /* Align text within the info section to the left */
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ddd; /* Slightly lighter text for titles */
+            text-align: center; /* Center the title of the combined section */
+        }
+
+        .info-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px; /* Add some space between paragraphs */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-5 {
+            margin-top: 2rem;
+        }
+
+        .btn-orange {
+            background-color: #143B5B; /* Using a blue color like the "Guardar" button */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px; /* Rounded like other buttons */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            cursor: pointer; /* Add cursor for better interaction */
+        }
+
+            .btn-orange:hover {
+                background-color: #0056b3; /* Darker shade on hover */
+            }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Place behind the content */
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* Ensure video covers the entire area */
+        }
+
+        body::before {
+            content: '';
+            position: fixed; /* Fixed overlay over the video */
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0; /* Place above the video */
+        }
+
+        /* Styles for the login and form containers */
+        .login-container, .form-container, .result-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* MODIFICACIÓN PARA LA TRANSPARENCIA DEL LOGIN CONTAINER */
+        .login-container {
+            background: rgba(0, 0, 0, 0.3); /* Fondo negro con 30% de opacidad */
+        }
+
+            .login-container h1 {
+                color: #fff;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .login-container label {
+                display: block;
+                color: #ddd;
+                margin-bottom: 5px;
+                text-align: left;
+            }
+
+            .login-container input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: #333;
+                color: #fff;
+            }
+
+            .login-container button[type="submit"] {
+                background-color: #143B5B;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                width: 100%;
+            }
+
+                .login-container button[type="submit"]:hover {
+                    background-color: #fff;
+                }
+
+        .form-container .welcome {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .form-container label {
+            display: block;
+            color: #ddd;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-container select, .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .form-container button[type="submit"] {
+            background-color: #143B5B; /* Green color for submit */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+            .form-container button[type="submit"]:hover {
+                background-color: #218838;
+            }
+
+        .result-container {
+            color: #fff;
+            text-align: center;
+        }
+
+        .result-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* MODIFICACIÓN AQUÍ PARA LA TRANSPARENCIA DEL RESULT CONTAINER */
+        .result-container {
+            background: rgba(0, 0, 0, 0.3); /* Fondo negro con 30% de opacidad */
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .result-box {
+            background-color: #444;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+
+            .result-box.show {
+                display: block;
+            }
+
+        .slider-container {
+            width: 80%;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background: transparent;
+            margin: 20px auto; /* Center the slider */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+        }
+
+            .slide:nth-child(odd) {
+                background-color: transparent;
+            }
+
+            .slide:nth-child(even) {
+                background-color: transparent;
+            }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #143B5B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+            .button:hover {
+                background-color: #143B5B;
+            }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        @* Offcanvas Menu - Lo ideal es que esto esté en _Layout.cshtml si se repite en muchas vistas *@
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li> @* Corrección tipográfica *@
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <div class="project-content">
+                <h2 class="project-title">REGISTRO DE PUNTOS POR USUARIO</h2>
+
+                <div class="form-container" id="formContainer">
+                    <form asp-action="RegistrarPuntos" asp-controller="Home" method="post">
+                        @Html.AntiForgeryToken() @* Importante para seguridad CSRF *@
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label for="NumeroBoleta" class="form-label">Número de Boleta del Usuario:</label>
+                            @* Asegúrate de que NumeroBoleta en RegistroPuntosViewModel sea string si puede contener letras/guiones *@
+                            <input type="text" asp-for="NumeroBoleta" class="form-control" placeholder="Ej. A123B45" required>
+                            <span asp-validation-for="NumeroBoleta" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="TipoMaterial" class="form-label">Tipo de Material:</label>
+                            <select asp-for="TipoMaterial" asp-items="Model.MaterialesDisponibles" class="form-select" required>
+                                <option value="">-- Selecciona un material --</option>
+                            </select>
+                            <span asp-validation-for="TipoMaterial" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Cantidad" class="form-label">Cantidad (unidades):</label>
+                            <input type="number" asp-for="Cantidad" min="1" class="form-control" placeholder="Ej. 10" required>
+                            <span asp-validation-for="Cantidad" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Registrar Puntos</button>
+                    </form>
+                </div>
+
+                @* Mensajes de éxito/error después de registrar puntos *@
+                @if (!string.IsNullOrEmpty(ViewBag.Message))
+                {
+                    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+                }
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="alert alert-danger mt-3">@ViewBag.ErrorMessage</div>
+                }
+
+                <div class="text-center mt-5">
+                    <a class="btn-orange" href="@Url.Action("productos", "Home")">Regresar a Productos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="video-wrap">
+        <video autoplay="" loop="" muted="" class="custom-video" poster="">
+            <source src="videos/video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

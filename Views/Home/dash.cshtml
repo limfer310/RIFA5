@@ -1,0 +1,379 @@
+﻿@model RIFA.ViewModels.DashboardViewModel 
+@{
+    ViewData["Title"] = "RIFA | Dashboard";
+
+}
+
+<head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro de Ayuda - RIFA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RIFA.styles.css" asp-append-version="true" />
+    <link href="~/css/index.css" />
+    <link href="~/css/bootstrap-icons.css" />
+    <link href="~/css/tooplate-kool-form-pack.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+        <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+
+                    body, html {
+                        margin: 0;
+                        padding: 0;
+                        font-family: 'Segoe UI', sans-serif;
+                        height: 100%;
+                        overflow: hidden;
+                        color: white;
+                    }
+
+                    .video-wrap {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        z-index: 0;
+                    }
+
+                    .custom-video {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        min-width: 100%;
+                        min-height: 100%;
+                        transform: translate(-50%, -50%);
+                        object-fit: cover;
+                    }
+
+                    /* Top bar con logo y enlaces */
+                    .top-bar {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 10px 30px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        z-index: 10;
+                    }
+
+                    .logo-section {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .logo-img {
+                        width: 35px;
+                        height: 35px;
+                        object-fit: contain;
+                    }
+
+                    .logo-text {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        color: #00aaff;
+                        text-decoration: none;
+                    }
+
+                    .right-section {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        font-size: 1rem;
+                        color: white;
+                    }
+
+                    .about-link {
+                        color: white;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                    .instagram-icon {
+                        font-size: 1.3rem;
+                        color: #00aaff;
+                        cursor: pointer;
+                    }
+
+                    .overlay {
+                        position: relative;
+                        background: rgba(0, 0, 0, 0.25);
+                        min-height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 30px 20px;
+                    }
+
+                    h1 {
+                        font-family: 'Unbounded', sans-serif;
+                        font-size: 3.0rem;
+                        font-weight: 700;
+                        margin-top: 60px;
+                        margin-bottom: 20px;
+                        letter-spacing: 0.1em;
+                    }
+
+                    .dashboard-bar {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 20px;
+                        background: rgba(0, 0, 0, 0.4);
+                        padding: 15px 20px;
+                        border-radius: 15px;
+                        backdrop-filter: blur(6px);
+                        width: 90%;
+                        max-width: 1100px;
+                    }
+
+                    .info-block {
+                        flex: 1 1 160px;
+                        min-width: 160px;
+                        text-align: center;
+                    }
+
+                        .info-block h3 {
+                            margin: 0;
+                            margin-bottom: 5px;
+                            font-size: 1.1em;
+                            color: #ccc;
+                        }
+
+                        .info-block .number {
+                            font-size: 2em;
+                            color: #00e6e6;
+                            text-shadow: 0 0 5px #00e6e6;
+                        }
+
+                    .buttons {
+                        display: flex;
+                        gap: 10px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin-top: 30px;
+                    }
+
+                        .buttons button {
+                            padding: 10px 15px;
+                            background-color: #143B5B;
+                            border: none;
+                            border-radius: 8px;
+                            color: white;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: transform 0.2s, background-color 0.3s;
+                        }
+
+                            .buttons button:hover {
+                                background-color: #1b6ba8;
+                                transform: scale(1.05);
+                            }
+
+                    .chart-container {
+                        width: 90%;
+                        max-width: 800px;
+                        margin-top: 40px;
+                        background: rgba(0, 0, 0, 0.4);
+                        padding: 20px;
+                        border-radius: 15px;
+                        backdrop-filter: blur(6px);
+                    }
+
+                    canvas {
+                        background: rgba(255, 255, 255, 0.03);
+                        border-radius: 10px;
+                        padding: 10px;
+                    }
+
+                         .offcanvas-icon {
+                color: #fff;
+                font-size: 1.5rem;
+                cursor: pointer;
+                margin-left: 20px; /* Add space before the offcanvas icon */
+            }
+
+            .offcanvas {
+                background-color: #111;
+                color: #fff;
+            }
+
+            .offcanvas-header .btn-close {
+                color: #fff;
+                opacity: 0.7;
+            }
+
+            .offcanvas-body nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+                .offcanvas-body nav ul li {
+                    margin-bottom: 15px;
+                }
+
+                    .offcanvas-body nav ul li a {
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 1.1rem;
+                        opacity: 0.8;
+                        transition: opacity 0.3s ease;
+                    }
+
+                        .offcanvas-body nav ul li a.active,
+                        .offcanvas-body nav ul li a:hover {
+                            opacity: 1;
+                        }
+
+        </style>
+
+</head>
+
+<body>
+    <main>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li> @* Corrección tipográfica *@
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+    <div class="overlay">
+        <h1>DASHBOARD DE RECOLECCIÓN</h1>
+
+        <div class="dashboard-bar">
+            <div class="info-block">
+                <h3>Botellas</h3>
+                <div class="number" id="botellas">@Model.TotalBotellaPET</div> @* <-- Datos del modelo *@
+            </div>
+            <div class="info-block">
+                <h3>Hojas</h3>
+                <div class="number" id="hojas">@Model.TotalHojasPapel</div> @* <-- Datos del modelo *@
+            </div>
+            <div class="info-block">
+                <h3>Tapas</h3>
+                <div class="number" id="tapas">@Model.TotalTapas</div> @* <-- Datos del modelo *@
+            </div>
+            <div class="info-block">
+                <h3>Usuarios</h3> @* Cambiado a "Usuarios" para claridad *@
+                <div class="number" id="usuario">@Model.TotalUsuarios</div> @* <-- Datos del modelo *@
+            </div>
+            @* Puedes añadir más bloques, por ejemplo, Total de Puntos Acumulados Global *@
+            <div class="info-block">
+                <h3>Puntos Totales</h3>
+                <div class="number" id="totalPuntos">@Model.TotalPuntosCanjeadosGlobal</div>
+            </div>
+        </div>
+
+
+        <div class="chart-container">
+            <canvas id="materialChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+// Datos iniciales para el gráfico, tomados del modelo Razor
+const initialBotellas = @Model.TotalBotellaPET;
+const initialHojas = @Model.TotalHojasPapel;
+const initialTapas = @Model.TotalTapas;
+
+const chart = new Chart(document.getElementById('materialChart'), {
+    type: 'bar',
+    data: {
+        labels: ['Botellas', 'Hojas', 'Tapas'],
+        datasets: [{
+            label: 'Cantidad Total',
+            data: [initialBotellas, initialHojas, initialTapas], // <-- Datos del modelo
+            backgroundColor: ['#0D47A1', '#1565C0', '#1E88E5'],
+            borderRadius: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: { color: 'white', callback: function (value) { if (Number.isInteger(value)) { return value; } } }, // Mostrar solo enteros si es necesario
+                grid: { color: '#444' }
+            },
+            x: {
+                ticks: { color: 'white' },
+                grid: { color: '#444' }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: { color: 'white' }
+            }
+        }
+    }
+});
+
+// ELIMINAMOS LA FUNCIÓN 'add' Y LA LÓGICA DE LOCALSTORAGE
+// Ya no se agregan datos desde el cliente, solo se visualizan los de la BD.
+</script>
+    <script src="~/js/jquery.min.js"></script> @* Asegúrate de que estas rutas sean correctas *@
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/init.js"></script>
+</main>
+</body>
