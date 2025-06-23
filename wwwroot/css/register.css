@@ -1,0 +1,229 @@
+body {
+    background-color: #0D1117; /* Fondo oscuro similar */
+    color: #C9D1D9; /* Texto claro similar */
+    font-family: 'Poppins', sans-serif;
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 40px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Optional: set a maximum width for the header content */
+}
+
+.site-header-text {
+    color: #F0F6FC;
+    font-weight: bold;
+}
+
+    .site-header-text i {
+        color: #143B5B; /* Azul similar */
+        margin-right: 0.5rem;
+    }
+
+.social-icon {
+    display: flex;
+    gap: 12px; /* Adjusted gap */
+}
+
+.social-icon-link {
+    font-size: 22px;
+    transition: color 0.3s ease;
+    color: #fff; /* Default color white */
+    text-decoration: none;
+}
+
+    /* Specific social media colors */
+    .social-icon-link.instagram {
+        color: #fff;
+    }
+
+    .social-icon-link.facebook {
+        color: #fff;
+    }
+
+    /* Hover effects */
+    .social-icon-link.instagram:hover {
+        color: #fff;
+    }
+
+    .social-icon-link.facebook:hover {
+        color: #fff;
+    }
+
+.custom-btn {
+    background-color: transparent;
+    color: #58A6FF;
+    border: 1px solid #58A6FF;
+    transition: opacity 0.3s ease;
+}
+
+    .custom-btn:hover {
+        background-color: #143B5B;
+        color: #0D1117;
+    }
+
+.offcanvas {
+    background-color: #161B22;
+    color: #C9D1D9;
+}
+
+.offcanvas-header .btn-close {
+    color: #C9D1D9;
+}
+
+.offcanvas-body nav ul li a {
+    color: #C9D1D9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .offcanvas-body nav ul li ahover,
+    .offcanvas-body nav ul li a.active {
+        color: #143B5B;
+    }
+
+.modal-content {
+    background-color: #161B22;
+    color: #C9D1D9;
+    border: 1px solid #2E3A47;
+}
+
+.modal-header {
+    border-bottom: 1px solid #2E3A47;
+}
+
+.modal-title {
+    color: #58A6FF;
+}
+
+.modal-body .form-control {
+    background-color: #1C2128;
+    border: 1px solid #2E3A47;
+    color: #C9D1D9;
+}
+
+    .modal-body .form-control::placeholder {
+        color: #A1B0B8;
+    }
+
+.modal-body button.form-control {
+    background-color: #143B5B; /* azul similar al botón de inicio */
+    color: #F0F6FC;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+    .modal-body button.form-control:hover {
+        background-color: #143B5B;
+    }
+
+.modal-footer {
+    border-top: 1px solid #2E3A47;
+}
+
+.hero-section {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    color: #F0F6FC;
+    text-align: center; /* Asegurar centrado del título */
+}
+
+.custom-form {
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    padding: 2rem;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #000000; /* Borde del formulario */
+}
+
+    .custom-form .form-floating > .form-control,
+    .custom-form .form-floating > .form-select {
+        background-color: #1C2128;
+        border: 1px solid #2E3A47;
+        color: #C9D1D9;
+    }
+
+    .custom-form .form-floating > label {
+        color: #A1B0B8;
+    }
+
+    .custom-form .form-check-input {
+        background-color: #1C2128;
+        border: 1px solid #2E3A47;
+    }
+
+    .custom-form .form-check-label {
+        color: #C9D1D9;
+    }
+
+    .custom-form button.form-control {
+        background-color: #143B5B; /* Verde similar al botón de inicio */
+        color: #F0F6FC;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .custom-form button.form-control:hover {
+            background-color: #143B5B;
+        }
+
+.video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.custom-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8; /* Un poco más opaco el video */
+}
+
+.ms-auto button.form-control {
+    width: 100%; /* Botón "Guardar" ocupa todo el ancho */
+}
+
+.col-lg-6.col-md-6.col-7 p {
+    color: #C9D1D9; /* Color del texto "¿Ya tienes una cuenta?" */
+    text-align: right; /* Alinear a la derecha */
+}
+
+.col-lg-6.col-md-6.col-7 a {
+    color: #fff; /* Color del enlace "Ingresar" */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .col-lg-6.col-md-6.col-7 a:hover {
+        text-decoration: underline;
+    }
+
+.form-check {
+    margin-bottom: 1rem; /* Espacio inferior para el checkbox */
+}
