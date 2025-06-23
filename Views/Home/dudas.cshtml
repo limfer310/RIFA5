@@ -1,0 +1,486 @@
+﻿@page
+@model RIFA.Views.Home.dudasModel
+@{
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro de Ayuda - RIFA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RIFA.styles.css" asp-append-version="true" />
+    <link href="~/css/index.css" />
+    <link href="~/css/bootstrap-icons.css" />
+    <link href="~/css/tooplate-kool-form-pack.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff; /* Color blanco para el texto principal */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .navbar-brand span
+        .nav-link,
+        h1,
+        h2,
+        h6,
+        .accordion-button,
+        .accordion-body,
+        label,
+        .btn-primary,
+        .site-footer-title {
+            color: white !important;
+        }
+
+        .site-footer-link {
+            color: white !important;
+        }
+
+        .copyright-text,
+        .dropdown-item,
+        .btn-secondary {
+            color: white !important;
+        }
+
+        .navbar {
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        main > section {
+            background-color: transparent !important;
+            padding: 20px;
+        }
+
+        .accordion-item {
+            background-color: rgba(128, 128, 128, 0.3) !important;
+            border: none !important;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .accordion-button:not(.collapsed),
+        .accordion-button {
+            background-color: transparent !important;
+            color: white !important;
+            box-shadow: none !important;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+            .accordion-button:focus {
+                border-color: transparent !important;
+                box-shadow: none !important;
+            }
+
+        .accordion-body {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        footer {
+            background-color: transparent !important;
+            color: white !important;
+            padding: 20px;
+        }
+
+        .section-bg {
+            background-color: transparent !important;
+        }
+
+        #section_1 .container .row .col-lg-8 {
+            padding-top: 50px;
+        }
+
+        .faq-section .col-lg-6 h2 {
+            background-color: rgba(128, 128, 128, 0.3);
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+
+        textarea, input[type="email"] {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            backdrop-filter: blur(4px);
+        }
+
+            textarea:focus, input[type="email"]:focus {
+                outline: none;
+                box-shadow: 0 0 5px #fff;
+            }
+
+        h1, h2, h6 {
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-primary, .btn-secondary {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 30px;
+            padding: 10px 25px;
+        }
+
+            .btn-primary:hover, .btn-secondary:hover {
+                background-color: #fff !important;
+                transform: scale(1.05);
+            }
+
+        .site-footer-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-toggle {
+            border-radius: 30px;
+        }
+
+        .navbar-custom {
+            background-color: #0d0f13;
+            border-radius: 50px;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 10px 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-toggler-custom {
+            background: none;
+            border: none;
+        }
+
+            .navbar-toggler-custom .navbar-toggler-icon {
+                width: 30px;
+                height: 30px;
+                background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+        .navbar-content a,
+        .navbar-content span,
+        .navbar-content i {
+            font-size: 16px;
+        }
+
+        .offcanvas-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px; /* Add space before the offcanvas icon */
+        }
+
+        .offcanvas {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .offcanvas-body nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+            .offcanvas-body nav ul li {
+                margin-bottom: 15px;
+            }
+
+                .offcanvas-body nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+
+                    .offcanvas-body nav ul li a.active,
+                    .offcanvas-body nav ul li a:hover {
+                        opacity: 1;
+                    }
+
+        .site-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+            .site-header .container {
+                display: flex;
+                justify-content: center; /* Center the content */
+                align-items: center;
+            }
+
+            .site-header .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%; /* Make row take full width of container */
+            }
+
+        .site-header-text {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.5rem;
+            margin-right: auto; /* Push logo to the left */
+        }
+
+            .site-header-text i {
+                margin-right: 8px;
+                font-size: 1.8rem;
+            }
+
+        .social-icon {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon-item {
+            margin-left: 15px;
+        }
+
+        .social-icon-link {
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+            .social-icon-link:hover {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li> @* Corrección tipográfica *@
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <section id="section_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <br /><br />       <br /><br />
+                        <h1 class="text-white text-center">Centro de Ayuda</h1>
+                        <h6 class="text-center">¿Cómo podemos ayudarte?</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <h2 class="mb-4">Preguntas Frecuentes</h2>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-5 col-12">
+                        <img src="~/imagenes/pregunta.png" class="img-fluid" alt="FAQs">
+                    </div>
+
+                    <div class="col-lg-6 col-12 m-auto">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        ¿Qué es RIFA?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">Reciclando e Innovando el Futuro Académico</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        ¿Qué función tiene la aplicación?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        Registrar los puntos acumulados por cada depósito que hace el usuario y canjearlos por objetos de papelería.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        ¿Qué materiales puedo reciclar?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse">
+                                    <div class="accordion-body">PET (plástico), papel y tapas de botellas.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section section-padding section-bg" id="section_5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center">
+                        <h2 class="mb-5">Sugerencias</h2>
+                    </div>
+                    <div class="col-lg-6 col-12 m-auto">
+                        <form action="mailto:info@company.com" method="post" enctype="text/plain">
+                            <div class="mb-3">
+                                <label for="sugerencia" class="form-label">Escribe tu sugerencia:</label>
+<textarea class="form-control" id="sugerencia" name="sugerencia" rows="5" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Tu correo electrónico:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="bi-send me-2"></i>Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="@Url.Action("index", "Home")">
+                        <i class="bi-back"></i><span>RIFA</span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Información</h6>
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 123-456-7890" class="site-footer-link">123-456-7890</a>
+                    </p>
+                    <p class="text-white d-flex">
+                        <a href="mailto:munozhuizardaniela@gmail.com" class="site-footer-link">rifa.voca13@gmail.com</a>
+                    </p>
+                </div>
+                <p class="copyright-text mt-lg-5 mt-4">
+                    © 2025 RIFA | Proyecto de Reciclaje - Todos los derechos reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>

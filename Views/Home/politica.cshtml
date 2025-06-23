@@ -1,0 +1,377 @@
+﻿@page
+@model RIFA.Views.Home.politicaModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Política de Privacidad | RIFA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0D1117;
+            color: #C9D1D9;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(56, 161, 195, 0.3);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            text-align: initial;
+        }
+
+        .main-content {
+            margin-top: 200px;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #38A1C3;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #9EBFD9;
+            font-size: 1.4rem;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #DDE8F1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #8396A6;
+        }
+
+        .logo-floating {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #38A1C3;
+        }
+
+            .logo-floating img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                border-radius: 10px;
+            }
+
+        .btn-return {
+            display: inline-block;
+            margin: 40px auto 0;
+            padding: 12px 30px;
+            background-color: #38A1C3;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+            .btn-return:hover {
+                background-color: #2e7fa2;
+            }
+
+            .btn-return i {
+                margin-right: 8px;
+            }
+
+        .site-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 40px;
+            padding: 15px 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .site-header .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .site-header .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+        .site-header-text {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.5rem;
+            margin-right: auto;
+        }
+
+            .site-header-text img {
+                height: 40px;
+                margin-right: 10px;
+            }
+
+        .social-icon {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icon-item {
+            margin-left: 15px;
+        }
+
+        .social-icon-link {
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+            .social-icon-link:hover {
+                opacity: 1;
+            }
+
+        .offcanvas-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .offcanvas {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .offcanvas-body nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+            .offcanvas-body nav ul li {
+                margin-bottom: 15px;
+            }
+
+                .offcanvas-body nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+
+                    .offcanvas-body nav ul li a.active,
+                    .offcanvas-body nav ul li a:hover {
+                        opacity: 1;
+                    }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <header class="site-header">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <a class="site-header-text d-flex align-items-center" href="/">
+                            <img src="~/imagenes/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                            RIFA
+                        </a>
+                    </div>
+                    <div class="col-auto d-flex align-items-center">
+                        <p class="mb-0 me-2">
+                            <a href="https://www.instagram.com/rifa_cecyt13" target="_blank" style="color: #fff;">¡Conócenos!</a>
+                        </p>
+                        <ul class="social-icon d-flex align-items-center me-3 mb-0">
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com/rifa_cecyt13" class="social-icon-link instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="bi-list offcanvas-icon" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu"></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Offcanvas Menu -->
+        @* Offcanvas Menu - Aquí es donde se añadirá la lógica para "alba.cshtml" *@
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li> @* Corrección tipográfica *@
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Fondo de video -->
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="videos/video.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+
+        <!-- Contenido principal separado del encabezado -->
+        <div class="main-content">
+            <div class="container">
+                <h1>Política de Privacidad</h1>
+
+                <p>En RIFA, tu privacidad es una prioridad. Esta política describe cómo recopilamos, usamos y protegemos tu información en el contexto de nuestra plataforma de reciclaje con recompensas.</p>
+
+                <h2>1. Información que Recopilamos</h2>
+                <p>Recopilamos datos personales básicos como nombre, correo electrónico y puntos acumulados, exclusivamente para ofrecerte una mejor experiencia de usuario dentro de la plataforma.</p>
+
+                <h2>2. Uso de la Información</h2>
+                <p>Usamos tu información para gestionar tu cuenta, registrar tus puntos obtenidos mediante reciclaje y permitir la redención de premios. Nunca compartiremos tus datos con terceros sin tu consentimiento.</p>
+
+                <h2>3. Protección de Datos</h2>
+                <p>Aplicamos medidas técnicas y organizativas adecuadas para proteger tus datos conforme a lo establecido por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares de México.</p>
+
+                <h2>4. Derechos del Usuario</h2>
+                <p>Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales (Derechos ARCO). Puedes ejercerlos en cualquier momento escribiéndonos a nuestro correo de contacto o a nuestras redes sociales.</p>
+
+                <h2>5. Cambios a esta Política</h2>
+                <p>Nos reservamos el derecho de modificar esta política para adaptarla a cambios legislativos o mejoras en nuestros servicios. Te notificaremos oportunamente cualquier cambio significativo.</p>
+
+                <h2>6. Contacto</h2>
+                <p>
+                    Si tienes dudas o deseas ejercer tus derechos, contáctanos en
+                    <a href="mailto:munozhuizardaniela@gmail.com" style="color: #38A1C3; text-decoration: underline;">munozhuizardaniela@gmail.com</a> o en nuestro
+                    <a href="https://www.instagram.com/rifa_cecyt13?igsh=NDg0eHJ6NWpzOG9n&authuser=0" target="_blank" style="color: #38A1C3; text-decoration: underline;">Instagram</a>.
+                </p>
+
+                <!-- Botón de regreso -->
+                <div style="text-align: center;">
+                    <a href="@Url.Action("index", "Home")" class="btn-return"><i class="fas fa-arrow-left"></i> Volver a la página principal</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2025 RIFA | Proyecto de Reciclaje - Todos los derechos reservados
+        </div>
+    </main>
+</body>
+</html>

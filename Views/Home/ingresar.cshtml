@@ -1,0 +1,366 @@
+﻿@model RIFA.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "RIFA | Iniciar Sesión";
+    Layout = "_Layout"; // Si tu layout principal se llama _Layout.cshtml
+}
+
+<style>
+    /* Tu CSS personalizado se mantiene igual */
+    body {
+        background-color: #0D1117; /* Fondo oscuro similar */
+        color: #C9D1D9; /* Texto claro similar */
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .site-header {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 40px;
+        padding: 15px 30px;
+        margin: 20px auto;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .site-header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px; /* Optional: set a maximum width for the header content */
+    }
+
+    .site-header-text {
+        color: #F0F6FC;
+        font-weight: bold;
+    }
+
+        .site-header-text i {
+            color: #143B5B; /* Azul similar */
+            margin-right: 0.5rem;
+        }
+
+    .social-icon {
+        display: flex;
+        gap: 12px; /* Adjusted gap */
+    }
+
+    .social-icon-link {
+        font-size: 22px;
+        transition: color 0.3s ease;
+        color: #fff; /* Default color white */
+        text-decoration: none;
+    }
+
+        /* Specific social media colors */
+        .social-icon-link.instagram {
+            color: #fff;
+        }
+
+        .social-icon-link.facebook {
+            color: #fff;
+        }
+
+        /* Hover effects */
+        .social-icon-link.instagram:hover {
+            color: #fff;
+        }
+
+        .social-icon-link.facebook:hover {
+            color: #fff;
+        }
+
+    .custom-btn {
+        background-color: transparent;
+        color: #58A6FF;
+        border: 1px solid #58A6FF;
+        transition: opacity 0.3s ease;
+    }
+
+        .custom-btn:hover {
+            background-color: #143B5B;
+            color: #0D1117;
+        }
+
+    .offcanvas {
+        background-color: #161B22;
+        color: #C9D1D9;
+    }
+
+    .offcanvas-header .btn-close {
+        color: #C9D1D9;
+    }
+
+    .offcanvas-body nav ul li a {
+        color: #C9D1D9;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .offcanvas-body nav ul li ahover,
+        .offcanvas-body nav ul li a.active {
+            color: #143B5B;
+        }
+
+    .modal-content {
+        background-color: #161B22;
+        color: #C9D1D9;
+        border: 1px solid #2E3A47;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #2E3A47;
+    }
+
+    .modal-title {
+        color: #58A6FF;
+    }
+
+    .modal-body .form-control {
+        background-color: #1C2128;
+        border: 1px solid #2E3A47;
+        color: #C9D1D9;
+    }
+
+        .modal-body .form-control::placeholder {
+            color: #A1B0B8;
+        }
+
+    .modal-body button.form-control {
+        background-color: #143B5B; /* azul similar al botón de inicio */
+        color: #F0F6FC;
+        border: none;
+        transition: opacity 0.3s ease;
+    }
+
+        .modal-body button.form-control:hover {
+            background-color: #143B5B;
+        }
+
+    .modal-footer {
+        border-top: 1px solid #2E3A47;
+    }
+
+    .hero-section {
+        background: transparent;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-title {
+        color: #F0F6FC;
+        text-align: center; /* Asegurar centrado del título */
+    }
+
+    .custom-form {
+        background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+        padding: 2rem;
+        border-radius: 8px; /* Bordes redondeados */
+        border: 1px solid #000000; /* Borde del formulario */
+    }
+
+        .custom-form .form-floating > .form-control,
+        .custom-form .form-floating > .form-select {
+            background-color: #1C2128;
+            border: 1px solid #2E3A47;
+            color: #C9D1D9;
+        }
+
+        .custom-form .form-floating > label {
+            color: #A1B0B8;
+        }
+
+        .custom-form .form-check-input {
+            background-color: #1C2128;
+            border: 1px solid #2E3A47;
+        }
+
+        .custom-form .form-check-label {
+            color: #C9D1D9;
+        }
+
+        .custom-form button.form-control {
+            background-color: #143B5B; /* Verde similar al botón de inicio */
+            color: #F0F6FC;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .custom-form button.form-control:hover {
+                background-color: #143B5B;
+            }
+
+    .video-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .custom-video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.8; /* Un poco más opaco el video */
+    }
+
+    .ms-auto button.form-control {
+        width: 100%; /* Botón "Guardar" ocupa todo el ancho */
+    }
+
+    .col-lg-6.col-md-6.col-7 p {
+        color: #C9D1D9; /* Color del texto "¿Ya tienes una cuenta?" */
+        text-align: right; /* Alinear a la derecha */
+    }
+
+    .col-lg-6.col-md-6.col-7 a {
+        color: #fff; /* Color del enlace "Ingresar" */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .col-lg-6.col-md-6.col-7 a:hover {
+            text-decoration: underline;
+        }
+
+    .form-check {
+        margin-bottom: 1rem; /* Espacio inferior para el checkbox */
+        text-align: initial
+    }
+
+    .login-form-container {
+        margin-top: 100px;
+        padding-top: 100px;
+    }
+
+</style>
+
+
+<main>
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+            <nav>
+                <ul>
+                    <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                    @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                    }
+                    else
+                    {
+                        <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                        <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                    }
+
+                    @* Enlaces generales, visibles para todos *@
+                    <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                    <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                    <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                    <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                    <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                    <li> <a href="@Url.Action("politica", "Home")">Politica de Priacidad</a></li>
+                    <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+                    <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                    <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                    <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li> @* Asumo que dashboard es para todos, si es solo admin, mueve abajo * @
+
+                    @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                    {
+                        <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-12 mx-auto login-form-container">
+                <br /><br />        <br /><br />
+                <form class="custom-form" asp-action="Ingresar" asp-controller="Home" method="post">
+                    @* Usar "Ingresar" con I mayúscula para consistencia *@
+
+                    <h2 class="hero-title text-center mb-4 pb-2">Iniciar Sesión</h2>
+
+                    @* Para mostrar errores generales del modelo (ej. "Usuario no encontrado") *@
+                    <div asp-validation-summary="ModelOnly" class="text-danger text-center"></div>
+
+                    @* Mostrar mensajes de error o éxito personalizados del TempData *@
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger mt-3 text-center">@TempData["ErrorMessage"]</div>
+                    }
+
+                    <div class="form-floating mt-4">
+                        <input asp-for="Email" type="email" class="form-control" placeholder="tu_correo@ejemplo.com"> @* "required" no es necesario aquí si usas Data Annotations en el ViewModel *@
+                        <label asp-for="Email">Correo Electrónico</label>
+                        <span asp-validation-for="Email" class="text-danger"></span> @* ESTO ES CLAVE para mostrar el error de formato **@
+                    </div>
+
+                    <div class="form-floating">
+                        <input asp-for="Contrasena" type="password" class="form-control" placeholder="Contraseña (6-100 caracteres)"> @* "required" no es necesario aquí si usas Data Annotations en el ViewModel *@
+                        <label asp-for="Contrasena">Contraseña</label>
+                        <span asp-validation-for="Contrasena" class="text-danger"></span> @* ESTO ES CLAVE para mostrar el error de validación de contraseña **@
+                    </div>
+
+                    <div class="form-check mt-3">
+                        <input asp-for="RememberMe" class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Recordarme</label>
+                    </div>
+
+                    @* ¡NUEVO! Checkbox para Iniciar como Administrador *@
+                    <div class="form-check mt-2">
+                        <input asp-for="IsAdminLogin" class="form-check-input" type="checkbox" id="isAdminLogin">
+                        <label class="form-check-label" for="isAdminLogin">Iniciar como Administrador</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 mx-auto">
+                            <button type="submit" class="form-control mt-4">Ingresar</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("register", "Home")" class="custom-btn btn mt-3">¿No tienes cuenta? Regístrate aquí</a>
+                        <br>
+                        <a href="@Url.Action("passwordreset", "Home")" class="custom-btn btn mt-2">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    @* Si tus scripts jQuery y Bootstrap ya están en _Layout.cshtml, no necesitas duplicarlos aquí.
+        Lo ideal es que los scripts globales estén en _Layout y los específicos se carguen con @section Scripts.
+        Generalmente, jquery.min.js y bootstrap.bundle.min.js YA DEBERÍAN ESTAR EN TU _Layout.cshtml
+        Si los dejas aquí, asegúrate de que no se carguen dos veces, ya que podría causar problemas.
+        Si _Layout.cshtml ya los tiene, puedes eliminar las siguientes 3 líneas. *@
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/countdown.js"></script>
+    @* <script src="~/js/init.js"></script> esta linea puede estar duplicada si ya esta en _Layout.cshtml *@
+}

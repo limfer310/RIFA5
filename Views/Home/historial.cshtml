@@ -1,0 +1,407 @@
+﻿@model List<RIFA.Models.Historial> // Esto es correcto si el controlador envía Historiales
+@{
+    ViewData["Title"] = "RIFA | Historial";
+}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RIFA | Tienda de Reciclaje</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff; /* Color blanco para el texto principal */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        .site-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+            .site-header .container {
+                display: flex;
+                justify-content: center; /* Center the content */
+                align-items: center;
+            }
+
+            .site-header .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%; /* Make row take full width of container */
+            }
+
+        .site-header-text {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.5rem;
+            margin-right: auto; /* Push logo to the left */
+        }
+
+            .site-header-text i {
+                margin-right: 8px;
+                font-size: 1.8rem;
+            }
+
+        .social-icon {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon-link {
+            font-size: 22px;
+            transition: color 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .social-icon-link.instagram {
+                color: #fff;
+            }
+
+            .social-icon-link.facebook {
+                color: #fff;
+            }
+
+            .social-icon-link.instagram:hover {
+                color: #FF69B4;
+            }
+
+            .social-icon-link.facebook:hover {
+                color: #0056d1;
+            }
+
+        .custom-btn {
+            background-color: transparent;
+            border: 2px solid #38A1C3; /* Azul claro para los botones */
+            color: #38A1C3; /* Azul claro en los textos */
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+            .custom-btn:hover {
+                background-color: #38A1C3; /* Fondo azul claro al hacer hover */
+                color: #fff; /* Texto blanco al hacer hover */
+            }
+
+        .offcanvas-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px; /* Add space before the offcanvas icon */
+        }
+
+        .offcanvas {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .offcanvas-body nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+            .offcanvas-body nav ul li {
+                margin-bottom: 15px;
+            }
+
+                .offcanvas-body nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+
+                    .offcanvas-body nav ul li a.active,
+                    .offcanvas-body nav ul li a:hover {
+                        opacity: 1;
+                    }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #DDE8F1; /* Azul muy claro */
+        }
+
+        .intro, .puntos {
+            text-align: center;
+            margin: 10px auto;
+            font-size: 1.1rem;
+            color: #DDE8F1; /* Azul muy claro */
+        }
+
+            .puntos span {
+                font-weight: bold;
+                color: #38A1C3; /* Azul claro */
+            }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(11, 32, 48, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el flip card */
+            color: #DDE8F1; /* Texto de color azul muy claro */
+        }
+
+            .flip-card-front img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .flip-card-front h3 {
+                margin: 15px 0 0;
+                color: #38A1C3; /* Azul claro */
+            }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+
+            .flip-card-back .price {
+                color: #38A1C3; /* Azul claro */
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .flip-card-back button {
+                margin-top: 10px;
+                padding: 10px 15px;
+                background-color: #143B5B; /* Azul medio oscuro */
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+                .flip-card-back button:hover {
+                    background-color: #0C4472; /* Azul más oscuro */
+                }
+
+        .historial-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+            .historial-link a {
+                text-decoration: none;
+                background: #143B5B; /* Color cambiado aquí */
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-weight: bold;
+            }
+
+                .historial-link a:hover {
+                    background: #0C4472; /* Un tono más oscuro al pasar el ratón */
+                }
+
+        /* Estilo para el botón "Volver a productos" */
+        .volver {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+            .volver a {
+                text-decoration: none;
+                background-color: #143B5B; /* Color del fondo del botón */
+                color: white; /* Color del texto */
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-weight: bold;
+                display: inline-block;
+                transition: background-color 0.3s ease;
+            }
+
+                .volver a:hover {
+                    background-color: #0C4472; /* Tono más oscuro al pasar el ratón */
+                }
+
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li> @* Corrección tipográfica *@
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h2>Historial de Actividades</h2>
+
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-dark table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th>ID Historial</th>
+                            <th>Usuario</th>
+                            <th>Material</th>
+                            <th>Cantidad</th>
+                            <th>Puntos Obtenidos</th>
+                            <th>Fecha Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.HistorialId</td>
+                                <td>@item.Usuario?.Nombre</td>
+                                <td>@item.MaterialReciclado?.TipoMaterial</td>
+                                <td>@item.Cantidad</td>
+                                <td>@item.PuntosGanados</td>
+                                <td>@item.FechaRegistro.ToShortDateString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No hay registros de historial para mostrar.</p>
+            }
+        </div>
+    </main>
+</body>

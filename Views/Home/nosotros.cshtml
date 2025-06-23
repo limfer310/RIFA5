@@ -1,0 +1,534 @@
+﻿@page
+@model RIFA.Views.Home.nosotrosModel
+@{
+}
+<head>
+    <meta charset="UTF-8">
+    <title>Creadores | Proyecto de Reciclaje</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RIFA.styles.css" asp-append-version="true" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/tooplate-kool-form-pack.css" rel="stylesheet" />
+    <link href="~/css/templatemo-topic-listing.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #000;
+            overflow-x: hidden;
+            overflow-y: auto; /* El body es el que controla el scroll */
+            padding-top: 100px; /* Añadir padding al body para que el contenido no quede debajo del header fijo */
+        }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Asegura que el video esté detrás de todo */
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+            /* Elimina estas propiedades, ya que el body principal ya tiene overflow */
+            /* overflow-x: auto; */
+            /* overflow-y: auto; */
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            margin: 1rem auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* --- ESTO ES LO NUEVO --- */
+            position: fixed; /* Hace que el header se quede fijo en la ventana */
+            top: 0; /* Lo fija en la parte superior */
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Asegura que esté por encima de casi todo el contenido */
+            width: 100%; /* Asegura que ocupe todo el ancho */
+            box-sizing: border-box; /* Para incluir padding y border en el width */
+            /* Eliminamos el margin: 1rem auto; porque fixed positioning lo sobrescribe */
+            /* Y en su lugar, centramos el contenido interno con un contenedor */
+        }
+
+        .header-content-wrapper {
+            max-width: 1200px; /* Misma que la del header */
+            margin: 0 auto; /* Centra el contenido */
+            width: 100%; /* Ocupa el ancho completo dentro del wrapper */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .site-header-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+            .site-header-text img {
+                height: 40px;
+                margin-right: 10px;
+            }
+
+        .social-icon {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon-link {
+            font-size: 22px;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .social-icon-link:hover {
+                color: #38A1C3;
+            }
+
+        .section-info {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+            .section-info h2 {
+                text-align: center;
+                margin-bottom: 1rem;
+                font-size: 2.2rem;
+            }
+
+            .section-info p {
+                text-align: center;
+                line-height: 1.6;
+                font-size: 1rem;
+            }
+
+        .gallery .row {
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            aspect-ratio: 2 / 3;
+            border: none;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border 0.5s, box-shadow 0.5s, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .card:hover {
+                border: 3px solid #a1e0e0;
+                box-shadow: 0 0 15px 5px #a1e0e0;
+                transform: scale(1.05);
+            }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            padding: 20px;
+        }
+
+            .modal.active {
+                display: flex;
+            }
+
+        .modal-content {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            color: #fff;
+            gap: 20px;
+        }
+
+            .modal-content .close {
+                align-self: flex-end;
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: #fff;
+            }
+
+        /* Styles for the new top-content-wrapper */
+        .top-content-wrapper {
+            display: flex;
+            justify-content: space-between; /* Push items to the corners */
+            align-items: flex-start; /* Align to the top of the wrapper */
+            max-width: 1200px; /* Match header max-width for consistency */
+            margin: 2rem auto 0; /* Top margin, auto for left/right to center, no bottom margin */
+            padding: 0 20px; /* Add some horizontal padding to prevent sticking to edges */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .corner-card {
+            /* No longer fixed position */
+            width: 150px; /* Adjust size as needed */
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            z-index: 5;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column; /* Stack image and text vertically */
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5); /* Add a background for better visibility */
+            border-radius: 15px; /* Match other cards */
+            padding: 10px; /* Add some padding */
+            text-align: center;
+        }
+
+            .corner-card img {
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+                transition: transform 0.3s ease;
+                border: none;
+            }
+
+            .corner-card:hover img {
+                transform: scale(1.1);
+            }
+
+            .corner-card a {
+                font-size: 0.9rem;
+                color: white;
+                text-decoration: none;
+                width: 100%;
+                margin-top: 5px; /* Space between image and text */
+            }
+
+        /* Remove specific left/right positioning as they are now in flow */
+        .corner-left, .corner-right {
+            position: static;
+            top: auto;
+            left: auto;
+            right: auto;
+        }
+
+        .offcanvas-icon {
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .offcanvas {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .offcanvas-header .btn-close {
+            color: #fff;
+            opacity: 0.7;
+            background: none;
+            font-size: 1.5rem;
+        }
+
+            .offcanvas-header .btn-close:focus {
+                box-shadow: none;
+            }
+
+        .offcanvas-body nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+            .offcanvas-body nav ul li {
+                margin-bottom: 15px;
+            }
+
+                .offcanvas-body nav ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+
+                    .offcanvas-body nav ul li a.active,
+                    .offcanvas-body nav ul li a:hover {
+                        opacity: 1;
+                        color: #38A1C3;
+                    }
+
+        /* Media Queries Responsivas */
+        @@media (max-width: 992px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 1.5rem;
+            }
+
+            body {
+                padding-top: 120px; /* Adjust padding if header gets taller */
+            }
+
+            .top-content-wrapper {
+                flex-direction: column; /* Stack on smaller screens */
+                gap: 20px;
+            }
+
+            .corner-card {
+                width: 120px;
+            }
+
+                .corner-card img {
+                    width: 60%;
+                    height: 60%;
+                }
+
+            .section-info h2 {
+                font-size: 2rem;
+            }
+
+            .section-info p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @@media (max-width: 768px) {
+            .corner-card {
+                width: 100px;
+            }
+
+                .corner-card img {
+                    width: 50%;
+                    height: 50%;
+                }
+
+            .site-header-text {
+                font-size: 1.3rem;
+            }
+
+            body {
+                padding-top: 150px; /* Adjust padding if header gets taller */
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+                font-size: 0.95rem;
+            }
+
+                .modal-content .close {
+                    font-size: 1.6rem;
+                }
+        }
+
+        @@media (max-width: 480px) {
+            header {
+                padding: 0.5rem 1rem;
+            }
+
+            .site-header-text img {
+                height: 30px;
+            }
+
+            .site-header-text {
+                font-size: 1.1rem;
+            }
+
+            .social-icon-link {
+                font-size: 18px;
+            }
+
+            body {
+                padding-top: 180px; /* Adjust padding if header gets taller */
+            }
+
+            .section-info {
+                padding: 1rem;
+            }
+
+                .section-info h2 {
+                    font-size: 1.8rem;
+                }
+
+                .section-info p {
+                    font-size: 0.9rem;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-wrap">
+        <video autoplay muted loop class="custom-video">
+            <source src="videos/video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+
+    <div class="top-content-wrapper">
+        <div class="corner-card">
+            <img src="~/imagenes/ipn.png" alt="Imagen Izquierda">
+            <a rel="nofollow" target="_blank" href="https://www.ipn.mx/">IPN</a>
+        </div>
+
+        <div class="corner-card">
+            <img src="~/imagenes/c13.jpg" alt="Imagen Derecha">
+            <a rel="nofollow" target="_blank" href="https://www.cecyt13.ipn.mx/">CECyT 13</a>
+        </div>
+    </div>
+
+    <section class="section-info">
+        <h2>¿Quiénes somos?</h2>
+        <p>Este proyecto fue creado por estudiantes del CECyT 13 con el objetivo de promover una cultura de reciclaje y conciencia ambiental mediante un sistema innovador de puntos y recompensas, incentivando la participación activa de la comunidad.</p>
+    </section>
+
+    <section class="gallery container">
+        <div class="row justify-content-center">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card h-100" onclick="openModal(0)">
+                    <img src="~/imagenes/huizar.png" class="img-fluid" alt="Creador 1">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card h-100" onclick="openModal(1)">
+                    <img src="~/imagenes/bruno.png" class="img-fluid" alt="Creador 2">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card h-100" onclick="openModal(2)">
+                    <img src="~/imagenes/enok.png" class="img-fluid" alt="Creador 3">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card h-100" onclick="openModal(3)">
+                    <img src="~/imagenes/mafer.png" class="img-fluid" alt="Creador 4">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card h-100" onclick="openModal(4)">
+                    <img src="~/imagenes/lili.png" class="img-fluid" alt="Creador 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-info">
+        <h2>Datos generales</h2>
+        <p>Escuela: Centro de Estudios Cientificos y Tecnologicos N.13</p>
+        <p>Carrera: Informatica</p>
+        <p>Grupo: 6IM7 Equipo N.3</p>
+        <p>6to Semestre</p>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-info" id="modal-text"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const modalText = document.getElementById("modal-text");
+
+        const creadores = [
+            {
+                nombre: "Daniela Muñoz Huizar",
+                descripcion: "Ella es Daniela Muñoz Huizar, la líder del proyecto. Su rol es fundamental para la dirección y el éxito general, ya que se encarga de coordinar y supervisar cada fase del desarrollo. Desde la planificación inicial hasta la entrega final, Daniela asegura la correcta ejecución del proyecto, la fluidez en la comunicación y la colaboración efectiva entre todos los miembros del equipo, garantizando que los objetivos se cumplan a tiempo y con la calidad esperada."
+            },
+            {
+                nombre: "Bruno Misael Perez Arroyo",
+                descripcion: "Él es Bruno Misael Pérez Arroyo, el arquitecto e implementador principal del código. Bruno es el desarrollador clave detrás de la estructura y funcionalidad del proyecto. Es el responsable de diseñar e implementar el sistema de puntos y todas las funcionalidades esenciales, asegurando que el código sea robusto, eficiente y escalable para soportar las necesidades futuras de la aplicación."
+            },
+            {
+                nombre: "Gabriel Enok Vazquez Lobato",
+                descripcion: "Él es Gabriel Enok Vázquez Lobato, el especialista en diseño visual y experiencia de usuario (UX). Enok es crucial para que el proyecto sea intuitivo y atractivo. Su enfoque principal es garantizar la cohesión estética y la usabilidad del producto. Se encarga del diseño de la interfaz de usuario (UI), la creación de animaciones fluidas y la edición visual, transformando la funcionalidad en una experiencia agradable y visualmente impactante para el usuario final."
+            },
+            {
+                nombre: "Maria Fernanda Leyva Hernandez",
+                descripcion: "Ella es María Fernanda Leyva Hernández, la especialista en mantenimiento y calidad de la aplicación. Mafer es indispensable para asegurar la estabilidad y el rendimiento del sistema. Su trabajo incluye el monitoreo continuo del funcionamiento de la aplicación, la identificación y resolución de posibles incidencias y la ejecución rigurosa de pruebas de control de calidad. Con su labor, garantiza que el producto final sea fiable y cumpla con los más altos estándares."
+            },
+            {
+                nombre: "Lilian Lizzete Ramirez Chaparro",
+                descripcion: "Ella es Lilian Lizzete Ramírez Chaparro, la experta en gestión de bases de datos y soporte técnico. Lili juega un papel vital en la infraestructura del proyecto. Es la responsable de la optimización y el mantenimiento de la base de datos, asegurando la integridad y disponibilidad de la información. Además, proporciona soporte técnico general dentro del entorno de desarrollo, resolviendo problemas y facilitando un flujo de trabajo sin interrupciones para el equipo."
+            }
+        ];
+
+        function openModal(index) {
+            modal.classList.add("active");
+            modalText.innerHTML = `<h3>${creadores[index].nombre}</h3><p>${creadores[index].descripcion}</p>`;
+        }
+
+        function closeModal() {
+            modal.classList.remove("active");
+        }
+
+        // Cierra el modal si se hace clic fuera del contenido del modal
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>

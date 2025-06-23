@@ -1,0 +1,403 @@
+﻿@model RIFA.ViewModels.AlbaViewModel
+@{
+    ViewData["Title"] = "RIFA | Administración de Usuarios";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centro de Ayuda - RIFA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RIFA.styles.css" asp-append-version="true" />
+    <link href="~/css/index.css" />
+    <link href="~/css/bootstrap-icons.css" />
+    <link href="~/css/tooplate-kool-form-pack.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <style>
+        /* Estilos básicos para las pestañas */
+        .tab-buttons {
+            margin-bottom: 20px;
+        }
+
+            .tab-buttons button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-right: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .tab-buttons button:hover {
+                    background-color: #0056b3;
+                }
+
+                .tab-buttons button.active {
+                    background-color: #0056b3;
+                    border-bottom: 3px solid #f8f9fa; /* Little underline */
+                }
+
+        .tab-content .tab-pane {
+            display: none; /* Ocultar todas las pestañas por defecto */
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin-top: 10px;
+        }
+
+            .tab-content .tab-pane.active {
+                display: block; /* Mostrar la pestaña activa */
+            }
+
+        /* Estilos para formularios */
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect total width */
+        }
+
+        .btn-primary {
+            background-color: #28a745; /* Green for "Alta" */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red for "Baja" */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .validation-summary-errors, .text-danger {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .table-dark {
+            background-color: #343a40;
+            color: white;
+        }
+
+            .table-dark thead th {
+                border-bottom: 2px solid #454d55;
+            }
+
+            .table-dark tbody td {
+                border-top: 1px solid #454d55;
+            }
+
+        .video-wrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <main>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                <nav>
+                    <ul>
+                        <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                        @* Mostrar "Ingresar" o "Cerrar Sesión" dependiendo del estado *@
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                        }
+                        else
+                        {
+                            <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                            <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                        }
+
+                        @* Enlaces generales, visibles para todos *@
+                        <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                        <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                        <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                        <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                        <li> <a href="@Url.Action("paginainformativa", "Home")">Pagina Informativa</a></li>
+                        <li> <a href="@Url.Action("politica", "Home")">Politica de Privacidad</a></li>
+                        <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+
+                        <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                        <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                        @* --- NUEVO: Enlace a alba.cshtml visible SÓLO para Administradores --- *@
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                        {
+                            <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                            <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+            <h1>@Model.Mensaje</h1>
+
+            @* Mensajes de TempData (éxito/error) *@
+            @if (!string.IsNullOrEmpty(Model.Message))
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @Model.Message
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @Model.ErrorMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="tab-buttons">
+                <button id="btnAlta" class="tab-button @(Model.ActiveTab == "alta" ? "active" : "")" data-tab="alta">Altas</button>
+                <button id="btnBaja" class="tab-button @(Model.ActiveTab == "baja" ? "active" : "")" data-tab="baja">Bajas</button>
+            </div>
+
+            <div class="tab-content">
+                @* Añadir un div contenedor para las pestañas *@
+
+                <div class="tab-pane fade show @(Model.ActiveTab == "alta" ? "active" : "")" id="alta" role="tabpanel" aria-labelledby="alta-tab">
+                    <h3>Crear Nueva Cuenta (Alta de Usuario)</h3>
+                    <form asp-action="AltaUsuario" asp-controller="Home" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.Nombre"></label>
+                            <input asp-for="NuevoUsuario.Nombre" class="form-control" />
+                            <span asp-validation-for="NuevoUsuario.Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.Email"></label>
+                            <input asp-for="NuevoUsuario.Email" class="form-control" type="email" />
+                            <span asp-validation-for="NuevoUsuario.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.Contrasena"></label>
+                            <input asp-for="NuevoUsuario.Contrasena" class="form-control" type="password" />
+                            <span asp-validation-for="NuevoUsuario.Contrasena" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.ConfirmarContrasena"></label>
+                            <input asp-for="NuevoUsuario.ConfirmarContrasena" class="form-control" type="password" />
+                            <span asp-validation-for="NuevoUsuario.ConfirmarContrasena" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.NumeroBoleta"></label>
+                            <input asp-for="NuevoUsuario.NumeroBoleta" class="form-control" />
+                            <span asp-validation-for="NuevoUsuario.NumeroBoleta" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NuevoUsuario.Rol">Rol del Usuario</label>
+                            <input asp-for="NuevoUsuario.Rol" class="form-control" readonly value="Usuario" />
+                            <span asp-validation-for="NuevoUsuario.Rol" class="text-danger"></span>
+                        </div>
+
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="text-danger">
+                                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                            </div>
+                        }
+                        @if (Model.ErrorMessage != null)
+                        {
+                            <div class="text-danger">@Model.ErrorMessage</div>
+                        }
+
+                        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="baja" role="tabpanel" aria-labelledby="baja-tab">
+                    <h3>Eliminar Usuario (Baja de Usuario)</h3>
+                    <form asp-action="BajaUsuario" asp-controller="Home" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label asp-for="NumeroBoletaBaja">Número de Boleta del Usuario a Eliminar</label>
+                            <input asp-for="NumeroBoletaBaja" class="form-control" />
+                            <span asp-validation-for="NumeroBoletaBaja" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Eliminar Usuario</button>
+                    </form>
+                </div>
+
+                @* Aquí puedes añadir más tab-pane si tienes más pestañas (por ejemplo, para cambiar roles, etc.) *@
+
+            </div> @* Cierre del div .tab-content *@
+
+            @* Tabla para mostrar usuarios registrados *@
+            <h2 class="mt-5">Usuarios Registrados</h2>
+            @if (Model != null && Model.Usuarios != null && Model.Usuarios.Any())
+            {
+                <table class="table table-dark table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Puntos Acumulados</th>
+                            <th>Rol</th>
+                            <th>Número de Boleta</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var usuario in Model.Usuarios)
+                        {
+                            <tr>
+                                <td>@usuario.UsuarioId</td>
+                                <td>@usuario.Nombre</td>
+                                <td>@usuario.Email</td>
+                                <td>@usuario.PuntosAcumulados</td>
+                                <td>@usuario.Rol</td>
+                                <td>@usuario.NumeroBoleta</td>
+                                <td>
+                                    @* Puedes añadir botones de acción aquí, por ejemplo, para editar un usuario *@
+                                    <a href="#" class="btn btn-sm btn-info" onclick="alert('Funcionalidad de Edición en desarrollo para usuario: @usuario.Nombre')">Editar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No hay usuarios registrados para mostrar.</p>
+            }
+        </div>
+
+
+
+        <!-- Fondo de video -->
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="videos/video.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const tabButtons = document.querySelectorAll('.tab-button');
+                    const tabPanes = document.querySelectorAll('.tab-pane');
+
+                    tabButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const targetTab = this.dataset.tab;
+                            const currentPane = document.getElementById(targetTab);
+
+                            // Verificar si la pestaña clickeada ya está activa
+                            if (currentPane.classList.contains('active')) {
+                                // Si está activa, ocultarla y remover la clase 'active' del botón
+                                currentPane.classList.remove('active');
+                                this.classList.remove('active');
+                            } else {
+                                // Si no está activa, primero ocultar todas las demás y luego mostrar esta
+                                tabButtons.forEach(btn => btn.classList.remove('active'));
+                                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                                this.classList.add('active');
+                                currentPane.classList.add('active');
+                            }
+                        });
+                    });
+
+
+
+                    // Código para mostrar la pestaña activa si se viene de una redirección con errores de validación
+                    const currentActiveTab = '@Model.ActiveTab';
+                    if (currentActiveTab) {
+                        const activeButton = document.querySelector(`.tab-button[data-tab="${currentActiveTab}"]`);
+                        const activePane = document.getElementById(currentActiveTab);
+
+                        if (activeButton && activePane) {
+                            // Remueve 'active' de todo para asegurar que solo la correcta se active
+                            tabButtons.forEach(btn => btn.classList.remove('active'));
+                            tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                            activeButton.classList.add('active');
+                            activePane.classList.add('active');
+                        }
+                    }
+                });
+            </script>
+        }
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+﻿@page
+@model RIFA.Views.Home.reglasModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RIFA | Reglamento</title> @* Título más descriptivo para la página de reglas *@
+    <link rel="preconnect" href="https://fonts.googleapis.com" &gt;
+    <link rel="preconnect" href="https://fonts.gstatic.com&quot; crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap&quot; rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css&quot; rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot; rel="stylesheet"> @* Para Font Awesome icons *@
+    <link href="~/css/register.css" rel="stylesheet" /> @* Asegúrate de que el path sea correcto y añade rel="stylesheet" *@
+
+    <style>
+        /* Asegura que HTML y BODY ocupen el 100% del alto del viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0D1117;
+            color: #C9D1D9;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Oculta el scroll principal del body, el scroll será manejado por <main> */
+            min-height: 100vh;
+            display: flex; /* Habilita Flexbox para el body */
+            flex-direction: column; /* Apila los hijos verticalmente (header, main) */
+        }
+
+        /* La etiqueta <main> contendrá todo el contenido principal */
+        main {
+            position: relative;
+            z-index: 1; /* Asegura que el contenido principal esté por encima del video */
+            flex-grow: 1; /* Permite que el main ocupe el espacio disponible, es decir, todo el espacio restante después del header */
+            overflow-y: auto; /* ¡CLAVE! Permite que el contenido dentro de 'main' se desplace verticalmente si es más largo que el alto de 'main' */
+            -webkit-overflow-scrolling: touch; /* Mejora el rendimiento del scroll en dispositivos iOS */
+            padding-bottom: 50px; /* Un poco de espacio al final si el contenido es corto */
+            min-height: 0; /* Resuelve un problema común de Flexbox donde flex-grow no funciona correctamente con overflow si no se establece min-height: 0 */
+        }
+
+        /* El encabezado del sitio web */
+        .site-header {
+            flex-shrink: 0; /* Evita que el encabezado se encoja cuando hay poco espacio */
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 40px;
+            padding: 15px 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+        }
+
+        .site-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .site-header-text {
+            color: #F0F6FC;
+            font-weight: bold;
+            font-size: 1.2rem; /* Usa rem para tamaño de fuente relativo */
+        }
+
+            .site-header-text i {
+                color: #143B5B;
+                margin-right: 0.5rem;
+            }
+
+        .social-icon {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon-link {
+            font-size: 22px;
+            transition: color 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .social-icon-link.instagram {
+                color: #fff;
+            }
+
+            .social-icon-link.facebook {
+                color: #fff;
+            }
+
+            .social-icon-link.instagram:hover {
+                color: #fff;
+            }
+
+            .social-icon-link.facebook:hover {
+                color: #fff;
+            }
+
+        .custom-btn {
+            background-color: transparent;
+            color: #58A6FF;
+            border: 1px solid #58A6FF;
+            transition: opacity 0.3s ease;
+            padding: 0.5rem 1rem; /* Padding relativo */
+            font-size: 1rem; /* Tamaño de fuente relativo */
+        }
+
+            .custom-btn:hover {
+                background-color: #143B5B;
+                color: #0D1117;
+            }
+
+        .offcanvas {
+            background-color: #161B22;
+            color: #C9D1D9;
+            width: 75vw; /* Ocupa el 75% del ancho del viewport */
+            max-width: 300px; /* Pero con un máximo para pantallas grandes */
+        }
+
+        .offcanvas-header .btn-close {
+            color: #C9D1D9;
+        }
+
+        .offcanvas-body nav ul li a {
+            color: #C9D1D9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem; /* Tamaño de fuente relativo */
+        }
+
+            .offcanvas-body nav ul li a:hover,
+            .offcanvas-body nav ul li a.active {
+                color: #143B5B;
+            }
+
+        .modal-content {
+            background-color: #161B22;
+            color: #C9D1D9;
+            border: 1px solid #2E3A47;
+            margin: 1rem; /* Margen para que no se pegue a los bordes en pantallas pequeñas */
+            width: auto; /* Ancho automático */
+            max-width: 500px; /* Ancho máximo para el modal */
+            box-sizing: border-box;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #2E3A47;
+        }
+
+        .modal-title {
+            color: #58A6FF;
+            font-size: 1.5rem; /* Tamaño de fuente relativo */
+        }
+
+        .modal-body .form-control {
+            background-color: #1C2128;
+            border: 1px solid #2E3A47;
+            color: #C9D1D9;
+            padding: 0.75rem; /* Padding relativo */
+            font-size: 1rem; /* Tamaño de fuente relativo */
+        }
+
+            .modal-body .form-control::placeholder {
+                color: #A1B0B8;
+            }
+
+        .modal-body button.form-control {
+            background-color: #143B5B;
+            color: #F0F6FC;
+            border: none;
+            transition: opacity 0.3s ease;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+
+            .modal-body button.form-control:hover {
+                background-color: #143B5B;
+            }
+
+        .modal-footer {
+            border-top: 1px solid #2E3A47;
+        }
+
+        /* La hero-section ahora es parte del contenido principal */
+        .hero-section {
+            background: transparent;
+            position: relative;
+            z-index: 1;
+            /* No min-height aquí, se ajusta al contenido */
+            padding: 2rem 1rem; /* Padding para evitar que el contenido se pegue a los bordes */
+            box-sizing: border-box;
+        }
+
+        .hero-title {
+            color: #F0F6FC;
+            text-align: center;
+            font-size: 3rem; /* Tamaño de fuente más grande para el título */
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #000000;
+            max-width: 500px; /* Ancho máximo para el formulario */
+            width: 90%; /* Se ajusta al 90% del ancho del contenedor */
+            margin: 0 auto; /* Centra el formulario */
+            box-sizing: border-box;
+        }
+
+            .custom-form .form-floating > .form-control,
+            .custom-form .form-floating > .form-select {
+                background-color: #1C2128;
+                border: 1px solid #2E3A47;
+                color: #C9D1D9;
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .custom-form .form-floating > label {
+                color: #A1B0B8;
+            }
+
+            .custom-form .form-check-input {
+                background-color: #1C2128;
+                border: 1px solid #2E3A47;
+            }
+
+            .custom-form .form-check-label {
+                color: #C9D1D9;
+                font-size: 0.9rem;
+            }
+
+            .custom-form button.form-control {
+                background-color: #143B5B;
+                color: #F0F6FC;
+                border: none;
+                transition: background-color 0.3s ease;
+                padding: 0.75rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+                .custom-form button.form-control:hover {
+                    background-color: #0F2E45;
+                }
+
+        /* Video de fondo, ahora envuelve todo el body para estar detrás de todo */
+        .video-wrap {
+            position: fixed; /* Cambiado a fixed para que se mantenga en el fondo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2; /* Asegura que esté detrás del main */
+        }
+
+        .custom-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+
+        .ms-auto button.form-control {
+            width: 100%;
+        }
+
+        .col-lg-6.col-md-6.col-7 p {
+            color: #C9D1D9;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .col-lg-6.col-md-6.col-7 a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+            .col-lg-6.col-md-6.col-7 a:hover {
+                text-decoration: underline;
+            }
+
+        .form-check {
+            margin-bottom: 1rem;
+        }
+
+        .project-content {
+            max-width: 95%; /* Ajuste al ancho de la pantalla */
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            color: #ffffff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .info-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1.5rem auto;
+            max-width: 90%; /* Ajuste al ancho de la pantalla */
+            border: 1px solid #2E3A47;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            text-align: left; /* Alinea el texto a la izquierda dentro de info-section */
+        }
+
+            .info-section ul {
+                list-style-type: disc; /* Añade viñetas a las listas */
+                padding-left: 20px; /* Sangría para las viñetas */
+                margin-bottom: 1rem;
+            }
+
+                .info-section ul li {
+                    margin-bottom: 0.5rem;
+                    color: #C9D1D9;
+                }
+
+        .project-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .info-title {
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .info-text {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #C9D1D9;
+            line-height: 1.6;
+        }
+
+        .btn-orange {
+            background-color: #143B5B;
+            border: none;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+            display: inline-block; /* Para que el padding y margen funcionen correctamente */
+            margin-top: 2rem; /* Espacio superior para el botón */
+        }
+
+            .btn-orange:hover {
+                background-color: #0F2E45;
+            }
+
+        /* Media Queries para una mejor responsividad */
+        .media screen and (max-width: 768px) {
+            .site-header
+
+        {
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .site-header-inner {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .social-icon {
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .custom-form {
+            padding: 1.5rem;
+            width: 95%;
+        }
+
+        .modal-content {
+            width: 90%;
+            margin: 0.5rem auto;
+        }
+
+        .project-content {
+            padding: 2rem 0.5rem;
+        }
+
+        .info-section {
+            padding: 1.5rem;
+            margin: 1rem auto;
+        }
+
+        }
+
+        .media screen and (max-width: 480px) {
+            .site-header-text
+
+        {
+            font-size: 1rem;
+        }
+
+        .custom-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .social-icon-link {
+            font-size: 18px;
+        }
+
+        .hero-title {
+            font-size: 1.8rem;
+        }
+
+        .modal-title {
+            font-size: 1.2rem;
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+        }
+
+        .info-text {
+            font-size: 0.85rem;
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+    @* Encabezado del sitio web *@
+    <header class="site-header">
+        <div class="site-header-inner">
+            <h1 class="site-header-text">
+                <i class="fa-solid fa-recycle"></i> RIFA
+            </h1>
+            <div class="social-icon">
+                <a href="#" class="social-icon-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon-link facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <button class="custom-btn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Iniciar Sesión
+            </button>
+        </div>
+    </header>
+
+    @* Menú Offcanvas (puede ser parte del header o flotante, pero no directamente "contenido principal") *@
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+            <nav>
+                <ul class="list-unstyled text-center">
+                    @* Remueve el estilo de lista por defecto si Bootstrap lo aplica, y centra el texto *@
+                    <li> <a href="@Url.Action("index", "Home")">Inicio</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li> <a href="@Url.Action("Logout", "Home")">Cerrar Sesión</a></li>
+                    }
+                    else
+                    {
+                        <li> <a href="@Url.Action("ingresar", "Home")">Ingresar</a></li>
+                        <li> <a href="@Url.Action("register", "Home")">Crear una Cuenta</a></li>
+                    }
+
+                    <li> <a href="@Url.Action("passwordreset", "Home")">Cambiar Contraseña</a></li>
+                    <li> <a href="@Url.Action("dudas", "Home")">Contacto</a></li>
+                    <li> <a href="@Url.Action("historial", "Home")">Historial</a></li>
+                    <li> <a href="@Url.Action("nosotros", "Home")">Nosotros</a></li>
+                    <li> <a href="@Url.Action("paginainformativa", "Home")">Página Informativa</a></li>
+                    <li> <a href="@Url.Action("politica", "Home")">Política de Privacidad</a></li>
+                    <li> <a href="@Url.Action("productos", "Home")">Productos</a></li>
+                    <li> <a href="@Url.Action("reglas", "Home")">Reglamento</a></li>
+                    <li> <a href="@Url.Action("dash", "Home")">Dashboard</a></li>
+
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Administrador"))
+                    {
+                        <li> <a href="@Url.Action("alba", "Home")">Administración de Alba</a></li>
+                        <li> <a href="@Url.Action("puntosacumulados", "Home")">Puntos Acumulados</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    @* Contenido Principal de la Página - Encapsulado en la etiqueta <main> *@
+    <main class="content-wrapper">
+        @* Puedes usar una clase para más control CSS si es necesario *@
+        <section class="hero-section">
+            @* Mantengo la clase hero-section para estilos existentes *@
+            <div class="project-content">
+                <h2 class="project-title">REGLAMENTO</h2>
+                <h5>Esta política establece las normas, materiales aceptados y funcionamiento del sistema de reciclaje automatizado de RIFA.</h5>
+
+                <div class="info-section">
+                    <h3 class="info-title">1. ¿Qué materiales se pueden reciclar?</h3>
+                    <p class="info-text">
+                        Papel
+                    </p>
+                    <ul>
+                        <li>Hojas blancas o usadas (sin grapas ni clips).</li>
+                        <li>Cartón limpio y seco.</li>
+                        <li>Revistas/cuadernos sin espirales metálicos.</li>
+                        <li>**Valor**: 10 hojas tamaño carta = 1 punto | 1 kg de cartón = 3 puntos.</li>
+                    </ul>
+                    <p class="info-text">
+                        **Botellas de Plástico (PET)**
+                    </p>
+                    <ul>
+                        <li>Botellas transparentes o verdes, vacías y limpias.</li>
+                        <li>Se aceptan de cualquier tamaño.</li>
+                        <li>Valor: Cada botella PET = 1 punto.</li>
+                    </ul>
+                    <p class="info-text">
+                        **Tapitas de Plástico**
+                    </p>
+                    <ul>
+                        <li>Tapas de botellas limpias y secas.</li>
+                        <li>Valor: 10 tapitas = 1 punto.</li>
+                    </ul>
+                </div>
+
+                <div class="mission-vision">
+                    @* Puedes considerar renombrar esta clase a algo más general si contiene otras secciones de información *@
+                    <div class="info-section">
+                        <h3 class="info-title">
+                            2. Lugar de entrega
+                        </h3>
+                        <p class="info-text">
+                            Los materiales deben depositarse únicamente en la máquina recicladora oficial del proyecto, ubicada en puntos establecidos.
+                        </p>
+                    </div>
+                    <div class="info-section">
+                        <h3 class="info-title">
+                            3. ¿Qué sucede después de entregar los materiales?
+                        </h3>
+                        <ul>
+                            <li>La máquina analiza y clasifica automáticamente el material.</li>
+                            <li>Si el material es válido, se suman los puntos a tu cuenta.</li>
+                            <li>Los residuos se almacenan para su recolección y traslado.</li>
+                            <li>Posteriormente se llevan a centros de reciclaje autorizados.</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h3 class="info-title">
+                            4. Reglas importantes
+                        </h3>
+                        <ul>
+                            <li>No se aceptan materiales mojados, sucios o mezclados con basura.</li>
+                            <li>Entregas reiteradas de materiales no válidos pueden generar sanciones.</li>
+                            <li>Este sistema busca fomentar la educación ambiental y el reciclaje responsable.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a class="btn-orange" href="@Url.Action("dudas", "Home")">¿Tienes más dudas sobre nosotros?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @* El video de fondo fuera del main para que abarque toda la pantalla y no se vea afectado por el scroll del main *@
+    <div class="video-wrap">
+        <video autoplay="" loop="" muted="" playsinline class="custom-video">
+            <source src="videos/video.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+        </script>
+        @* Asegúrate de tener los scripts de Bootstrap al final del body *@
+</body>
+</html>
