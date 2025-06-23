@@ -1,0 +1,158 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\views\\home\\nosotros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:views\\home\\nosotros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\views\\home\\paginainformativa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:views\\home\\paginainformativa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\data\\rifadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:data\\rifadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\migrations\\20250619165631_primeramigraciontotal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:migrations\\20250619165631_primeramigraciontotal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\views\\home\\alba.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:views\\home\\alba.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|c:\\users\\hp\\downloads\\rifa 4.0\\rifa 4.0\\rifa\\viewmodels\\albaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECDC3105-C17D-4DCD-AF1E-48DD5024FEE0}|RIFA.csproj|solutionrelative:viewmodels\\albaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAcwC0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T15:17:29.777Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "nosotros.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\nosotros.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\nosotros.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\nosotros.cshtml",
+              "RelativeToolTip": "Views\\Home\\nosotros.cshtml",
+              "ViewState": "AgIAAN4BAAAAAAAAAACAPfgBAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T14:43:29.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RIFADbContext.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Data\\RIFADbContext.cs",
+              "RelativeDocumentMoniker": "Data\\RIFADbContext.cs",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Data\\RIFADbContext.cs",
+              "RelativeToolTip": "Data\\RIFADbContext.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAYwNkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T14:37:17.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "paginainformativa.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\paginainformativa.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\paginainformativa.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\paginainformativa.cshtml",
+              "RelativeToolTip": "Views\\Home\\paginainformativa.cshtml",
+              "ViewState": "AgIAAFcBAAAAAAAAAAAAAG4BAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T14:30:52.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250619165631_PrimeraMigracionTotal.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Migrations\\20250619165631_PrimeraMigracionTotal.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250619165631_PrimeraMigracionTotal.cs",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Migrations\\20250619165631_PrimeraMigracionTotal.cs",
+              "RelativeToolTip": "Migrations\\20250619165631_PrimeraMigracionTotal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:56:31.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:53:31.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "alba.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\alba.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\alba.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\Views\\Home\\alba.cshtml",
+              "RelativeToolTip": "Views\\Home\\alba.cshtml",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAOAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-16T17:52:08.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AlbaViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\ViewModels\\AlbaViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AlbaViewModel.cs",
+              "ToolTip": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\ViewModels\\AlbaViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AlbaViewModel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAzwD8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T18:10:44.672Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
