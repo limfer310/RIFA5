@@ -1,0 +1,417 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RIFA.bundle.scp.css",
+      "PackagePath": "staticwebassets\\RIFA.cv4fg9il5o.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\bootstrap-icons.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\paginainformativa.css",
+      "PackagePath": "staticwebassets\\css\\paginainformativa.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\register.css",
+      "PackagePath": "staticwebassets\\css\\register.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\css\\tooplate-kool-form-pack.css",
+      "PackagePath": "staticwebassets\\css\\tooplate-kool-form-pack.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\fonts\\bootstrap-icons.woff",
+      "PackagePath": "staticwebassets\\fonts\\bootstrap-icons.woff"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\fonts\\bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\bootstrap-icons.woff2"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\BMPA.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\BMPA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\Dan.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\Dan.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\Enok.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\Enok.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\Lili.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\Lili.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\Mafer.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\Mafer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\botpapta.png",
+      "PackagePath": "staticwebassets\\imagenes\\botpapta.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\bruno.png",
+      "PackagePath": "staticwebassets\\imagenes\\bruno.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\c13.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\c13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\copias.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\copias.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\cuaderno.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\cuaderno.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\enok.png",
+      "PackagePath": "staticwebassets\\imagenes\\enok.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\folder.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\folder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\huizar.png",
+      "PackagePath": "staticwebassets\\imagenes\\huizar.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\impresion.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\impresion.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\ipn.png",
+      "PackagePath": "staticwebassets\\imagenes\\ipn.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\lapiz.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\lapiz.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\lili.png",
+      "PackagePath": "staticwebassets\\imagenes\\lili.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\logo.png",
+      "PackagePath": "staticwebassets\\imagenes\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\mafer.png",
+      "PackagePath": "staticwebassets\\imagenes\\mafer.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\pluma.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\pluma.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\pregunta.png",
+      "PackagePath": "staticwebassets\\imagenes\\pregunta.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\regla.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\regla.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\imagenes\\tijera.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\tijera.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\js\\countdown.js",
+      "PackagePath": "staticwebassets\\js\\countdown.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\js\\init.js",
+      "PackagePath": "staticwebassets\\js\\init.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\pagina\\test.html",
+      "PackagePath": "staticwebassets\\pagina\\test.html"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\RIFA 4.0\\RIFA 4.0\\RIFA\\wwwroot\\videos\\video.mp4",
+      "PackagePath": "staticwebassets\\videos\\video.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RIFA.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RIFA.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.RIFA.props",
+      "PackagePath": "build\\RIFA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RIFA.props",
+      "PackagePath": "buildMultiTargeting\\RIFA.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.RIFA.props",
+      "PackagePath": "buildTransitive\\RIFA.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
